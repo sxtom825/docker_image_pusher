@@ -116,7 +116,7 @@ jobs:
             docker pull $line
 
             echo "docker search $line"
-            docker search  --format "table {{.Name}}\t{{.Tags}}\t{{.StarCount}}\t{{.Description}}\t{{.IsOfficial}}" $line
+            docker search  --format "table {{.Name}}\t{{.Tag}}\t{{.StarCount}}\t{{.Description}}\t{{.IsOfficial}}" $line
           \
             platform=$(echo "$line" | awk -F'--platform[ =]' '{if (NF>1) print $2}' | awk '{print $1}')
             echo "platform is $platform"
